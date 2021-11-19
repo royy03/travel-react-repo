@@ -191,7 +191,7 @@ export default [
   },
   {
     id: 22,
-    name: 'PeritoMoreno glacier',
+    name: 'Moreno glacier',
     country: 'Argentina',
     image: 'https://media.istockphoto.com/photos/sunset-at-perito-moreno-glacier-picture-id504752312?k=20&m=504752312&s=170667a&w=0&h=RrEMzImxm4PcrYoZGMCRo60oABSGkEbgtr9Bj6BWfvc=',
     data: 'Perhaps the world’s most impressive glacier, Perito Moreno Glacier in Los Glaciares National Park is a must-see phenomenon and a highlight for many on a  trip to Argentina. Since its UNESCO inscription 40 years ago, watching the  blue ice break away from the glacier and plunge into the ice field below never seems to get old.',

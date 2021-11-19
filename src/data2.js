@@ -1,4 +1,4 @@
-const facts = [
+const factss = [
 {id:1,
 img:'https://upload.travelawaits.com/ta/uploads/2021/04/2d81b379b17d288410d70a2d7b4ab2d81b3-800x800.jpg',
 def:"World's highest waterfall",
@@ -90,4 +90,4 @@ def:"World's largest single drop waterfall",
 name:'Kaieteur Falls, Guyana',
 },
 ]
-export default facts
+export default factss

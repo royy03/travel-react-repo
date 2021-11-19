@@ -8,10 +8,11 @@ function App() {
   // const [facts, setFacts] = useState(data2)
   return (
     <main>
+
+      <Facts />
       <section className='container'>
-        {/* <Facts /> */}
-        <Flip places={places} />
-       
+      <Flip places={places} />
+
       </section>
     </main>
   )
