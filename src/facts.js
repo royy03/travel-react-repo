@@ -18,8 +18,8 @@ function Facts() {
 
   useEffect(() => {//for time interval
     let slider = setInterval(() => {//in function "//" is used for comments and in return {/* */}is used
-      setIndex(index - 1);
-    }, 3000);
+      setIndex(index + 1);
+    }, 3500);
     return () => {
       clearInterval(slider);
     };
@@ -27,6 +27,7 @@ function Facts() {
 
   return (
     <section className="section">
+      <div className='bg-image'>
         <h1 className="title" >
         Some Intriguing Facts about <br/> South America
         </h1>
@@ -54,7 +55,7 @@ function Facts() {
               <h4 className="title2">{name}</h4>
             </article>
           );
-        })}
+        })}</div>
         {/* normal button functions */}
         <button className="prev-arrow" onClick={() => setIndex(index - 1)}> 
           <AiOutlineDoubleLeft  id='arrows-facts'/>

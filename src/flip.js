@@ -29,7 +29,7 @@ const Flip = ({ places }) => {
                   flipDirection="horizontal" 
                   ref={ref}  className= 'flippy' isFlipped = {isFlipped} flipDirection = "horizontal"
               >
-                <FrontSide  className= 'frontside' style={{ backgroundColor: '#e5e4f5', display: 'flex',
+                <FrontSide  className= 'frontside' style={{ backgroundColor: 'white', display: 'flex',
         alignItems: 'center',
         flexDirection: 'column'}}>
                  
