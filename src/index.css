@@ -4,11 +4,13 @@ background-color:black;
 /* dont use article in any file. Use section instead */
 .image{
   position: relative;
-  height:300px;
-  width: 100%;
+  height:320px;
+  width: 290px;
   display: flex;
   border: 1px solid black;
-  /* border-radius:10%; */
+  border-radius:10%;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 .frontside{
   display: flex;
@@ -45,48 +47,39 @@ font-family: 'Playfair Display', serif;
   background:transparent;
   outline: none;
   color: rgb(245, 40, 40);
-}
-.flipicon-btn2{
-  position: absolute;
-  top: 30px;
-  right: 20px;
-  border: none;
-  background:transparent;
-  outline: none;
-  size: large;
-  color: rgb(245, 40, 40);
+  box-sizing: border-box;
 }
 .flipicon{
   width: 1.75rem;
   height: 1.75rem;
-}
-.shareicon{
-  height: 1.5rem;
-  width: 1.5rem;
-  position:absolute;
-  right: 40px;
-  bottom:25px;
 }
 .likeicon{
   position: absolute;
   height: 1.8rem;
   width: 1.8rem;
   left: 40px;
-  bottom:25px;
+  bottom:15px;
 }
 .likes{
   position: absolute;
   left:80px;
-  bottom:25px;
+  bottom:15px;
   font-size: large;
 }
 .saveicon{
   height: 1.8rem;
   width: 1.8rem;
   position:absolute;
-  right: 40px;
-  bottom:25px;
+  right: 60px;
+  bottom:15px;
   margin-right: 15%;
+}
+.shareicon{
+  height: 1.5rem;
+  width: 1.5rem;
+  position:absolute;
+  right: 50px;
+  bottom:15px;
 }
 .card-icons{
 display: inline;
@@ -133,14 +126,16 @@ flex-wrap: wrap;
   margin-top: 2.0px;
   margin-bottom: 20px;
   border-radius: 10%;
+  align-items: center;
 }
 .container{
   display: flex;
   /* flex-basis: calc(33.33%-400px); */
    flex-wrap:wrap;
    justify-content: space-around;
+   align-items: center;
 }
- /********************************************************* */
+ /******************************facts******************************** */
  
 .section{
   position: relative;
@@ -163,7 +158,7 @@ flex-wrap: wrap;
   left: 0;
   bottom: 0;
 opacity: 0.35;
-border-radius: 50%;
+/* border-radius: 50%; */
 }
 .section-center {
   margin: 0 auto;
@@ -207,6 +202,11 @@ border-radius: 50%;
   align-items: center;
   justify-content: center;
 }
+.txt-sa{
+  color: #e8fafa;
+  text-align: center;
+  font-size: 2rem;
+}
 .def{
 font-size: 1.5rem;
 text-align:center;
@@ -219,7 +219,7 @@ color: #e9e9f2;
   display: grid;
   text-transform: capitalize;
   margin-bottom: 0.75rem;
-  color: white;
+  color: #f5faf2;
   text-align:center;
   align-content: center;
   font-size: 1.75rem;
@@ -289,3 +289,32 @@ article.nextSlide {/*shows the right slide*/
     font-size: 1.5rem;
   }
 }
+ /****************************to top scroll******************************/
+ .scroll-to-top{
+  cursor: pointer;
+  position: fixed;
+  bottom: 12px;
+  right: 50px;
+  z-index: 1000;
+ }
+ .icon-scroll{
+width: 38px;
+height: 40px;
+margin-right: 10px;
+padding-left: 12px;
+width: 40px;
+height: 40px;
+border-radius: 100%;
+color:black;
+ }
+ .to-top-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 40px;
+  width: 40px;
+  background: rgb(5, 252, 79);
+border-radius: 50%;
+ }
+ /****************************to top scroll******************************/

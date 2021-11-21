@@ -5,7 +5,7 @@ export default [
     name: 'Salar de Uyuni',
     country: 'Bolivia',
     image: 'https://wallpapercave.com/wp/wp4202139.jpg',
-    data: 'Salar de Uyuni is the largest salt flat in  the world containing more than 10 billion tonnes of salt but, what makes this place so unique is the mirror effect caused after a rainfall, which fades away the limits between the sky and the land, making it look as if you were walking on the clouds.This salt flat is an endless criss-cross of hexagonal lines caused by the crystalline nature of salt.That’s not all, in the middle of this great salt desert is a hotel made entirely out of salt! Constructed using salt bricks and mortar, everything inside the hotel, including the chairs, tables and beds are all made of salt.',
+    data: 'Salar de Uyuni is the largest salt flat in  the world containing more than 10 billion tonnes of salt but, what makes this place so unique is the mirror effect, which fades away the limits between the sky and the land, making it look as if you were walking on the clouds.This salt flat is an endless criss-cross of hexagonal lines caused by the crystalline nature of salt.That’s not all, in the middle of this great salt desert is a hotel made entirely out of salt! Constructed using salt bricks, everything inside the hotel, including the chairs, tables and beds are all made of salt.',
     info: 'This video pretty much covers the paradise in Bolivia!',
     iframes: 'https://www.youtube.com/embed/1vPMD3wmaZo',
   },

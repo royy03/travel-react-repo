@@ -19,7 +19,7 @@ function Facts() {
   useEffect(() => {//for time interval
     let slider = setInterval(() => {//in function "//" is used for comments and in return {/* */}is used
       setIndex(index + 1);
-    }, 3500);
+    }, 4000);
     return () => {
       clearInterval(slider);
     };
@@ -29,8 +29,9 @@ function Facts() {
     <section className="section">
       <div className='bg-image'>
         <h1 className="title" >
-        Some Intriguing Facts about <br/> South America
-        </h1>
+        Some Intriguing Facts about  </h1><br/>
+        <h1 className='txt-sa'> South America</h1>
+        
       <div className="section-center">
 
         {facts.map((fact, factIndex) => {//fact index??????

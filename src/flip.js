@@ -15,7 +15,7 @@ const Flip = ({ places }) => {
   const [isFlipped, setisFlipped] = useState(false);
 
 
-  const handleClick = ()=>{
+  const handleClick = (id)=>{
   setisFlipped(!isFlipped);
   }
   return (
@@ -23,7 +23,6 @@ const Flip = ({ places }) => {
       {places.map((place) => {
         const { id,name,country,image,data,info,iframes } = place;
         return (<section key = {id} className = 'place'>
-         
                 <Flippy
                   flipOnClick={false} key={id}
                   flipDirection="horizontal" 
@@ -34,17 +33,11 @@ const Flip = ({ places }) => {
         flexDirection: 'column'}}>
                  
                   <h1 className= 'name'><span className='num'> {id}</span>&emsp;{name} <div className = 'underline'></div>
-                  <button onClick =  {handleClick}  className= 'flipicon-btn' ><AiOutlineInfoCircle className= 'flipicon' /></button>
+                  <button onClick = {()=>handleClick(id)} key={id} className= 'flipicon-btn' ><AiOutlineInfoCircle className= 'flipicon' /></button>
                   <h3 className = 'country'>{country}</h3></h1>
                   
-                <img src = {image} alt = 'image' className = 'image'/>
-                <div className='data'>
-                <p> {readMore ? data : `${data.substring(0, 200)}...`}
-                <button className= 'readmore' onClick={() => setReadMore(!readMore)}>
-                {readMore ? 'show less' : 'read more'}
-                </button>
-                <hr color='black' width='90%' />
-                </p>
+                <img src = {image} alt = 'image' className = 'image'/><br/>
+                <hr color='black' width='90%' /><br/>
                 <div className = 'card-icons'>
                 <BiLike className= 'likeicon'/>
                 <b className='likes'>0 admires</b>
@@ -52,18 +45,23 @@ const Flip = ({ places }) => {
                 <HiSave className = 'saveicon'/>
                 <IoMdShareAlt className='shareicon' />
                 </div>
-                </div>
                 </FrontSide>
                 
-                <BackSide className= 'backside' style={{ backgroundColor: '#e5e4f5' ,border: 'black'}} border= {'black'}>
+                <BackSide className= 'backside' style={{ backgroundColor: 'white' ,border: 'black'}} border= {'black'}>
                 <>
 
-                <button onClick =  {handleClick} className= 'flipicon-btn2'><AiFillInfoCircle className= 'flipicon' /></button>
-                <h1 className= 'name'><span className='num'> {id}</span>&emsp;{name} <div className = 'underline'></div>
-                  <h3 className = 'country'>{country}</h3></h1>
-                  
+                <button onClick = {()=>handleClick(id)} key={id} className= 'flipicon-btn'><AiFillInfoCircle className= 'flipicon' /></button><br/>
+
+
+                  <div className='data'>
+                <p> {readMore ? data : `${data.substring(0, 200)}...`}
+                <button className= 'readmore' onClick={() => setReadMore(!readMore)}>
+                {readMore ? 'show less' : 'read more'}
+                </button></p>
                   <b>{info}</b>
+                  </div>
                   <iframe id = {id} width="280" height="160"  src={iframes} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+                 
                   </>
                 </BackSide>
               </Flippy>
