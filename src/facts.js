@@ -21,7 +21,7 @@ function Facts() {
       setIndex(index + 1);
     }, 4000);
     return () => {
-      clearInterval(slider);
+      clearInterval(slider);//otherwise function will go mad
     };
   }, [index]);
 
