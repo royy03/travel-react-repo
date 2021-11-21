@@ -1,50 +1,72 @@
-import React, { useState } from 'react';
-import facts from './data2';
-import { FaChevronLeft, FaChevronRight} from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
+import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from 'react-icons/ai';
+import factss from './data2';
+//use 2 useeffects,one to check out of limits and other for time interval
+function Facts() {
+  const [facts, setFacts] = useState(factss);
+  const [index, setIndex] = useState(0);
 
+  useEffect(() => {//to check out of limits
+    const lastIndex = facts.length - 1;
+    if (index < 0) {
+      setIndex(lastIndex);
+    }
+    if (index > lastIndex) {
+      setIndex(0);
+    }
+  }, [index, facts]);//parameters used
 
-const Facts = () => {
-  //prefer using indexing instead of map since circular loop with left and right arrows
-  const [index, setIndex] = useState(0);//initially show first review or 0th index
-  const { img,name,def } = facts[index];
-  const checkNumber = (number) => {//see if we put right arrow after last or left arrow in first
-    if (number > facts.length - 1) {
-      return 0;//0th element displayed
-    }
-    if (number < 0) {
-      return facts.length - 1;//last ele displayed
-    }
-    return number;//normal case
-  };
-  const nextFact = () => {//right arrow function
-    setIndex((index) => {
-      let newIndex = index + 1;
-      return checkNumber(newIndex);
-    });
-  };
-  const prevFact = () => {//left arrow function
-    setIndex((index) => {
-      let newIndex = index - 1;
-      return checkNumber(newIndex);
-    });
-  };
+  useEffect(() => {//for time interval
+    let slider = setInterval(() => {//in function "//" is used for comments and in return {/* */}is used
+      setIndex(index + 1);
+    }, 4000);
+    return () => {
+      clearInterval(slider);
+    };
+  }, [index]);
+
   return (
-    <article className='facts'>
-      <div className='img-container'>
-        <img src={img} alt={name} className='facts-image' />
-      </div>
-      <h1 className= 'facts-def'>{def}</h1>
-      <p className='facts-name'>{name}</p>
-      <div className='button-container'>
-        <button className='prev-btn' onClick={prevFact}>
-          <FaChevronLeft />
+    <section className="section">
+      <div className='bg-image'>
+        <h1 className="title" >
+        Some Intriguing Facts about  </h1><br/>
+        <h1 className='txt-sa'> South America</h1>
+        
+      <div className="section-center">
+
+        {facts.map((fact, factIndex) => {//fact index??????
+          const { id, img,def, name} = fact;
+
+          let position = 'nextSlide';//all obj are stored in the next(right) state first
+          if (factIndex === index) {/* if index matches that obj becomes active*/
+            position = 'activeSlide';
+          }
+          if (//for prev(left) slide
+
+            factIndex === index - 1 ||//other than the first item in centre (personindex=-1) we will have left(prev) too
+            (index === 0 && factIndex === facts.length - 1)//first item in centre means last item in left
+          ) {
+            position = 'lastSlide';
+          }
+
+          return (
+            <article className={position} key={id}> {/*assigning classname next/last/active slide*/}
+              <img src={img} alt={name} className="place-img" />
+              <h1 className='def'><i>{def}</i></h1>
+              <h4 className="title2">{name}</h4>
+            </article>
+          );
+        })}</div>
+        {/* normal button functions */}
+        <button className="prev-arrow" onClick={() => setIndex(index - 1)}> 
+          <AiOutlineDoubleLeft  id='arrows-facts'/>
         </button>
-        <button className='next-btn' onClick={nextFact}>
-          <FaChevronRight />
+        <button className="next-arrow" onClick={() => setIndex(index + 1)}>
+          <AiOutlineDoubleRight id='arrows-facts'/>
         </button>
       </div>
-    </article>
+    </section>
   );
-};
+}
 
 export default Facts;

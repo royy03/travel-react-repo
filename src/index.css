@@ -1,20 +1,16 @@
 body{
-background-color:black
+background-color:black;
 }
-.container{
-  display: flex;
-  /* flex-basis: calc(33.33%-400px); */
-   flex-wrap:wrap;
-   justify-content: space-around;
-
-}
+/* dont use article in any file. Use section instead */
 .image{
   position: relative;
-  height:300px;
-  width: 100%;
+  height:320px;
+  width: 290px;
   display: flex;
   border: 1px solid black;
   border-radius:10%;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 .frontside{
   display: flex;
@@ -48,48 +44,42 @@ font-family: 'Playfair Display', serif;
   top: 30px;
   right: 17px;
   border: none;
-  background:#e5e4f5;
+  background:transparent;
   outline: none;
-}
-.flipicon-btn2{
-  position: absolute;
-  top: 30px;
-  right: 17px;
-  border: none;
-  background:#e5e4f5;
-  outline: none;
+  color: rgb(245, 40, 40);
+  box-sizing: border-box;
 }
 .flipicon{
   width: 1.75rem;
   height: 1.75rem;
-}
-.shareicon{
-  height: 1.5rem;
-  width: 1.5rem;
-  position:absolute;
-  right: 40px;
-  bottom:25px;
 }
 .likeicon{
   position: absolute;
   height: 1.8rem;
   width: 1.8rem;
   left: 40px;
-  bottom:25px;
+  bottom:15px;
 }
 .likes{
   position: absolute;
   left:80px;
-  bottom:25px;
+  bottom:15px;
   font-size: large;
 }
 .saveicon{
   height: 1.8rem;
   width: 1.8rem;
   position:absolute;
-  right: 40px;
-  bottom:25px;
+  right: 60px;
+  bottom:15px;
   margin-right: 15%;
+}
+.shareicon{
+  height: 1.5rem;
+  width: 1.5rem;
+  position:absolute;
+  right: 50px;
+  bottom:15px;
 }
 .card-icons{
 display: inline;
@@ -111,9 +101,10 @@ display: inline;
 }
 .readmore{
   color:#16b7bd;
-  background-color: #e5e4f5;
+  background-color: transparent;
   font-size:large;
   border:none;
+  outline: none;
 }
 .data{
   font-family: 'Playfair Display', serif;
@@ -129,46 +120,201 @@ display: inline;
   height: auto;
   max-width: 350px;
   display: flex;
-  border: 2px solid black;
+  /* border: 1px solid black; */
 flex-wrap: wrap;
   overflow:hidden;
-  margin-top: 20px;
+  margin-top: 2.0px;
   margin-bottom: 20px;
   border-radius: 10%;
+  align-items: center;
 }
- /********************************************************* */
-
- .facts-image{
-  height:auto;
-  width: 300px;
+.container{
   display: flex;
-  border: 1px solid black;
+  /* flex-basis: calc(33.33%-400px); */
+   flex-wrap:wrap;
+   justify-content: space-around;
+   align-items: center;
+}
+ /******************************facts******************************** */
+ 
+.section{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  border: 3px solid black;
+  font-family: 'Playfair Display', serif;
+
+}
+.section::before{
+  content: "";
+  background-image: url('https://media.cntraveler.com/photos/57a2278c51b1fe8b3ce4dc89/master/w_1920%2Cc_limit/valparaiso-chile-GettyImages-502373247.jpg');
+  background-size: cover;
+  position: absolute;
+  top:0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+opacity: 0.35;
+/* border-radius: 50%; */
+}
+.section-center {
+  margin: 0 auto;
+  margin-top: 4rem;
+  width:1200px;
+  height: 450px;/*height compulsory*/
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;/*shows only active slide and not prev/next*/
+}
+.place-img {
+  border-radius: 50%;
+  margin: 20px;
+  margin-bottom: 1rem;
+  width: 250px;
+  height: 250px;
+  border: 1.5px solid black;
+  float: right;
+  margin-right: auto;
+  display: block;
+  margin-left: auto;
+  align-items:center;
+  position: relative;
+  right: 130px;
 }
 
-.review {
-  background: var(--clr-white);
-  padding: 1.5rem 2rem;
-  border-radius: var(--radius);
-  box-shadow: var(--light-shadow);
-  transition: var(--transition);
+.title {
+  position: relative;
+  top: 50px;
+  margin-left:70px;
+  margin-right: 70px;
+  padding-left: 70px;
+  padding-right: 70px;
+  color: #e6f2f5;
   text-align: center;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.review:hover {
-  box-shadow: var(--dark-shadow);
+.txt-sa{
+  color: #e8fafa;
+  text-align: center;
+  font-size: 2rem;
 }
-.img-container {
+.def{
+font-size: 1.5rem;
+text-align:center;
+position: relative;
+top: 70px;
+color: #e9e9f2;
+
+}
+.title2 {
+  display: grid;
+  text-transform: capitalize;
+  margin-bottom: 0.75rem;
+  color: #f5faf2;
+  text-align:center;
+  align-content: center;
+  font-size: 1.75rem;
   position: relative;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin: 0 auto;
-  margin-bottom: 1.5rem;
+top: 100px;
 }
-.person-img {
+.prev-arrow
+{
+  position: absolute;
+  top: 250px;
+  background: transparent;
+  color: whitesmoke;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  border-color: transparent;
+  cursor: pointer;
+  outline: none;
+  left: 0;
+}
+.next-arrow {
+  position: absolute;
+  top: 250px;
+  background: transparent;
+  color: whitesmoke;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  border-color: transparent;
+  cursor: pointer;
+  outline: none;
+  right:0;
+  margin: auto;
+}
+article {
+   /* everything top of one other */
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  display: block;
   height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  position: relative;
+  opacity: 0; /*hides the left and right objects,show it only for the active slide*/
+  transition: all 0.3s linear;
 }
+article.activeSlide {/*shows the present slide*/
+  opacity: 1;
+  transform: translateX(0);
+}
+article.lastSlide {/*shows the left slide*/
+  transform: translateX(-100%);
+}
+article.nextSlide {/*shows the right slide*/
+  transform: translateX(100%);
+}
+#arrows-facts{
+  height: 4rem;
+  width: 4rem;
+  }
+@media (min-width: 800px) {
+  .text {
+    max-width: 45em;
+  }
+  .prev,
+  .next {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.5rem;
+  }
+}
+ /****************************to top scroll******************************/
+ .scroll-to-top{
+  cursor: pointer;
+  position: fixed;
+  bottom: 12px;
+  right: 50px;
+  z-index: 1000;
+ }
+ .icon-scroll{
+width: 38px;
+height: 40px;
+margin-right: 10px;
+padding-left: 12px;
+width: 40px;
+height: 40px;
+border-radius: 100%;
+color:black;
+ }
+ .to-top-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 40px;
+  width: 40px;
+  background: rgb(5, 252, 79);
+border-radius: 50%;
+ }
+ /****************************to top scroll******************************/
